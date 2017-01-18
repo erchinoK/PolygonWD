@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Polygon Web Design</title>
+    <meta name="keywords" content="Dublin web designer,Ireland Web design,Web design,HTML,CSS,JavaScript,Jquery,Freelance,Web Freelancer,SEO,asp.net,.NET,responsive website" />
+    <meta name="description" content="I am a freelance web designer & front-end developer specialising in HTML5, CSS3, jQuery based in Dublin, Ireland." />
+    <meta name="author" content="Polygon Web Design" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-ico" href='~/public/images/favicon.ico' />
+    <link rel="stylesheet" href="~/public/styles/slicknav.css" type="text/css"/>
+    <link href="~/public/styles/main.css" rel="stylesheet" type="text/css" />
+    <link id="scrollUpTheme" rel="stylesheet" href="~/public/styles/themes/image.css" />
+    <%--<script type="text/javascript" src='<%= this.Page.ResolveUrl("~/public/scripts/jquery-1.4.1.min.js") %>'></script>--%>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> <%--Necessary (v1) for mobile menu--%>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <script type="text/javascript" src='<%= this.Page.ResolveUrl("~/public/scripts/jquery.slicknav.js") %>'></script>
+    <script type="text/javascript" src='<%= this.Page.ResolveUrl("~/public/scripts/jquery.scrollUp.min.js") %>'></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Setup menu
+            $('#menu-header').slicknav({
+                label: ''
+            });
+        });
+
+        $(function () {
+            // Setup scroll up
+            $.scrollUp({
+                animation: 'fade',
+                scrollText: '' // Text for element
+            });
+        });
+</script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div id="page">
+        <div id="header">
+            <div id="header-content">
+                <a id="logo" href='<%= this.Page.ResolveUrl("~/Default.aspx") %>'><asp:Image ID="img_logo" AlternateText="Polygon Web Design" ImageUrl="~/public/images/logo.png" runat="server" width="215px" Height="60px" /></a>
+                <ul id="menu-header">
+                    <li>
+                        <asp:HyperLink ID="HyperLink7" runat="server" EnableViewState="False" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink5" runat="server" EnableViewState="False" NavigateUrl="~/About.aspx">Who we are</asp:HyperLink>
+                    </li>
+                    <li>
+                        <a href="#">What we do</a>
+                        <ul class="submenu">
+                            <li>
+                                <asp:HyperLink ID="HyperLink1" runat="server" EnableViewState="False" NavigateUrl="~/Services/Starter.aspx">Starter Website</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink2" runat="server" EnableViewState="False" NavigateUrl="~/Services/WebDesign.aspx">Web Design</asp:HyperLink>
+                            </li>
+                            <%--<li>
+                                <asp:HyperLink ID="HyperLink3" runat="server" EnableViewState="False" NavigateUrl="~/Services/Ecommerce">eCommerce</asp:HyperLink>
+                            </li>--%>
+                        </ul>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink4" runat="server" EnableViewState="False" NavigateUrl="~/Portfolio/Showroom.aspx">Our Work</asp:HyperLink>
+                    </li>                    
+                    <li>
+                        <asp:HyperLink ID="HyperLink6" runat="server" EnableViewState="False" NavigateUrl="~/Contact.aspx">Contact us</asp:HyperLink>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>                     
+        </div>
+        <div id="main">
+            <asp:Label ID="lbl_message" runat="server" Text="" CssClass="message" Visible="false" EnableViewState="false" onclick="$(this).fadeOut();"><span class="close">x</span></asp:Label>
+            <%--<div class="main-content">
+                <h2>Web Design • Content Managed Websites • eCommerce • Search Engine Optimisation</h2>  
+            </div>--%>            
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="footer-content">            
+            <%--<a id="logo-footer" href='<%= this.Page.ResolveUrl("~/Default.aspx") %>'><asp:Image ID="img_logo_footer" AlternateText="Polygon Web Design" ImageUrl="~/public/images/logo-footer.png" runat="server" width="215px" Height="60px" /></a>--%>
+            <a id="logo-footer" href='<%= this.Page.ResolveUrl("~/Default.aspx") %>'><asp:Image ID="img_logo_footer" AlternateText="Polygon Web Design" ImageUrl="~/public/images/logo-footer.png" runat="server" width="100%" /></a>
+            <div id="about-footer">
+                <h3>About me</h3>
+                <span>Hi. My name is <b><a href="http://ie.linkedin.com/in/robertokmelendezch" target="_blank">Roberto Melendez</a></b> and I am a freelance Web Designer and Developer based in Dublin, Ireland.
+                I've started my career by studying B.Sc in Computer Science in 2005 and then working as Web Developer in a multinational company for a couple of years.
+                Now I decided to work on freelance Web design and development projects on my own.
+                If you’re a business in need of a new website, get in touch. I can help you, whatever your size or budget.</span>
+            </div>
+            <div id="contact-footer">
+                <h3>Contact us</h3>
+                <ul>
+                    <li><asp:Image ID="Image1" runat="server" EnableViewState="False" ImageUrl="~/public/images/contact_phone.png" Width="16px" Height="16px" />+353 86 390 9843</li>
+                    <li><asp:Image ID="Image2" runat="server" EnableViewState="False" ImageUrl="~/public/images/contact_email.png" Width="16px" Height="16px" />contact@polygonwd.com</li>
+                    <li><asp:Image ID="Image3" runat="server" EnableViewState="False" ImageUrl="~/public/images/contact_location.png" Width="16px" Height="16px" />Dublin, Ireland</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div id="copyright-content">&copy; Copyright 2014. Polygon Web Design. All Rights Reserved</div>
+    </div>
+    </form>
+
+    <%--Google Analytics Script--%>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-53468414-1', 'auto');
+            ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>

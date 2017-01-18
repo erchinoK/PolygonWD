@@ -1,0 +1,153 @@
+/*! http://responsiveslides.com v1.54 by @viljamis */
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+
+/*************** CAPTIONS ************/
+.rslides .caption_container 
+{
+    position: absolute;
+    left: 4%;
+    top: 13%;   
+    width: 70%;   
+    color: #fff;
+    }
+    .rslides .caption 
+      {
+            display: block;
+            font-size: 1.7em;   
+            width: 60%;
+            text-shadow: 1px 1px 0px rgba(50, 50, 50, 1);
+      }
+    .rslides .title.caption 
+      {
+            font-size: 3em;       
+            font-weight: bold;
+            width: 100%;
+      }
+@media screen and (max-width: 40em) 
+{
+.rslides .caption_container 
+{
+    top: 1%;
+    width: 95%;   
+    }
+	.rslides .caption 
+      {
+            font-size: 1.1em;   
+      }
+    .rslides .title.caption 
+      {
+            font-size: 2.0em;       
+      }
+}
+
+/**************** NAVIGATION **************/
+.slider-container
+{
+    position: relative;
+}
+
+.rslides_nav 
+{
+    }
+    .rslides_nav.prev,
+    .rslides_nav.next 
+    {
+        display: block;
+        width: 30px;
+        background-image: url(../images/slider_nav.png);
+        background-position: 0 0;
+        overflow: hidden;
+        height: 0;
+        opacity: 0.8;
+        padding-top: 80px;
+        position: absolute;
+        top: 40%;
+        z-index: 100;
+    }
+    .rslides_nav.prev 
+    {
+    }
+    .rslides_nav.next 
+    {
+        background-position: 30px 0;
+        right: 0;
+    }
+    .rslides_nav:hover
+    {
+        opacity: 1.0;
+    }
+
+.rslides_tabs 
+{
+    clear: both;
+    list-style: none;
+    overflow: auto;
+    height: 100%;
+    }
+    .rslides_tabs li 
+    {
+        float: left;
+        margin: 0 1px;
+        }
+        .rslides_tabs li a
+        {
+            display: block;
+            width: 13px;
+            height: 0;
+            padding-top: 13px;
+            background-image: url(../images/slider_nav.png);
+            background-position: -26px -80px;
+            float: left;
+            overflow: hidden;
+        }
+        .rslides_tabs li.rslides_here a,
+        .rslides_tabs li.rslides_here a:hover
+        {
+          background-position: 0 -80px;
+        }
+        .rslides_tabs li a:hover {
+          background-position: -13px -80px;
+        }
+
+@media screen and (max-width: 40em) 
+{
+.rslides_nav 
+{
+    }
+    .rslides_nav.prev,
+    .rslides_nav.next 
+    {
+        top: 30%;
+    }
+}
