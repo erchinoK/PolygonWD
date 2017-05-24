@@ -77,7 +77,7 @@ public class Email
 
         try
         {
-            client.Send(Message);
+            //client.Send(Message);
         }  
         catch (Exception Ex)
         {
