@@ -66,7 +66,7 @@
                   <img src="public/images/slider2.jpg" alt="" />
                   <div class="caption_container">
                     <p class="caption title">Web Design Creativity</p>
-                    <p class="caption">We plan, design and build awesome websites that are Simple, clean and creative</p>
+                    <p class="caption">We plan, design and build awesome websites that are simple, clean and creative</p>
                   </div>
                 </li>
                 <li>
